@@ -115,8 +115,6 @@ zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
-export GPG_TTY=$(tty)
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -336,3 +334,5 @@ chpwd_functions+=(chpwd_virtualenv_activate) # add the function to the default l
 smartresize() {
     mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all =interlace none -colorspace sRGB $1
 }
+
+export GPG_TTY=$(tty)
