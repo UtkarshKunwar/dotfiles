@@ -203,6 +203,10 @@ alias bat='batcat'
 alias glog="git log --graph --decorate --pretty=format:'%C(auto)%h%d %s %C(dim white)(%ar by <%aN>)%Creset'"
 alias gloga="glog --all"
 
+alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
+alias primusrun=prime-run
+alias optirun=prime-run
+
 export PATH=$HOME/.deno/bin:$PATH
 export PATH=$HOME/.mlir/bin:$PATH
 
