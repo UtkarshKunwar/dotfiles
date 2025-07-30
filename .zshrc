@@ -1,3 +1,6 @@
+# Needs to be run before the instant prompt
+export GPG_TTY=$(tty)
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -339,4 +342,3 @@ smartresize() {
     mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all =interlace none -colorspace sRGB $1
 }
 
-export GPG_TTY=$(tty)
