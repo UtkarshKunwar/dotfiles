@@ -216,13 +216,6 @@ export PATH=$HOME/.mlir/bin:$PATH
 # export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 export MANPAGER="nvim +Man!"
 
-alias -g -- -h='-h 2>&1 | batcat --language=help --style=plain'
-alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
-alias bathelp='bat --plain --language=help'
-help() {
-    "$@" --help 2>&1 | bathelp
-}
-
 cdls() {
     cd $@ && ls
 }
@@ -256,9 +249,9 @@ export CPM_SOURCE_CACHE=$HOME/.cache/CPM
 export CMAKE_BUILD_PARALLEL_LEVEL=32
 
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# FIXME: Not working in the latest virtualenvwrapper for some reason
-# source $HOME/.local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=$HOME/.virtualenvs/venv/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.virtualenvs/venv/bin/virtualenv
+source $HOME/.virtualenvs/venv/bin/virtualenvwrapper.sh
 unset __WORKON_USING_FILE # flag to check if venv was activated from .python-version
 
 # The following functions help provide an experience similar to that of pyenv but using
@@ -342,3 +335,10 @@ smartresize() {
     mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all =interlace none -colorspace sRGB $1
 }
 
+# Need to be set after virtualenvwrapper stuff is sourced
+alias -g -- -h='-h 2>&1 | batcat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
+alias bathelp='bat --plain --language=help'
+help() {
+    "$@" --help 2>&1 | bathelp
+}
