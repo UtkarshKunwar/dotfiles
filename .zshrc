@@ -205,6 +205,8 @@ alias bat='batcat'
 
 alias glog="git log --graph --decorate --pretty=format:'%C(auto)%h%d %s %C(dim white)(%ar by <%aN>)%Creset'"
 alias gloga="glog --all"
+alias gbcl='git branch --merged develop | egrep -v "(^\*|master|main|develop|release)" | xargs git branch -d'
+alias gbcr='git branch -r --merged develop | egrep -v "(^\*|master|main|develop|release)" | sed -E "s/.*origin\///" | xargs git push -d origin'
 
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias primusrun=prime-run
