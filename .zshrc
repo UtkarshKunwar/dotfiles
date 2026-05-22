@@ -212,6 +212,9 @@ alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias primusrun=prime-run
 alias optirun=prime-run
 
+alias catimg="kitten icat --align left"
+alias catvid="mpv --vo=kitty --vo-kitty-use-shm=yes"
+
 export PATH=$HOME/.deno/bin:$PATH
 export PATH=$HOME/.mlir/bin:$PATH
 
