@@ -215,6 +215,10 @@ alias optirun=prime-run
 alias catimg="kitten icat --align left"
 alias catvid="mpv --vo=kitty --vo-kitty-use-shm=yes"
 
+alias update-kitty="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin"
+alias minder="com.github.phase1geo.minder"
+alias google-chrome="brave-browser"
+
 export PATH=$HOME/.deno/bin:$PATH
 export PATH=$HOME/.mlir/bin:$PATH
 
