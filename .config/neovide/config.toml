@@ -1,0 +1,2 @@
+[box-drawing]
+mode = "native" # One of "font-glyph", "native", "selected-native"
